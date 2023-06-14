@@ -5,4 +5,6 @@
     <color name="orange">#EB6A2D</color>
     <color name="blue">#1E406C</color>
     <color name="status_bar_color">#EB6A2D</color>
+    <color name="light_grey">#F3F5F9</color>
+    <color name="light_orange">#F6E7D7</color>
 </resources>

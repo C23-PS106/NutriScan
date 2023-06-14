@@ -2,4 +2,11 @@
     <string name="app_name">NutriScan</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis tortor a gravida tincidunt. Integer eu arcu diam.</string>
     <string name="profile">Profile</string>
+    <string name="my_account">My Account</string>
+    <string name="log_out">Log out</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="mail_placeholder">johnDoe@mail.com</string>
+    <string name="name_placeholder">John Doe</string>
+    <string name="profile_information">Profile Information</string>
 </resources>
