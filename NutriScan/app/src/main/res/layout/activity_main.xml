@@ -29,6 +29,252 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ayamGoreng"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/round_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:srcCompat="@drawable/ayam_goreng"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/meal1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="6dp"
+            android:text="Ayam Goreng"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ayamGoreng" />
+
+        <ImageButton
+            android:id="@+id/buburAyam"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/round_button"
+            app:layout_constraintStart_toEndOf="@+id/ayamGoreng"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:srcCompat="@drawable/bubur"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/meal2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="6dp"
+            android:text="Bubur Ayam"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/meal1"
+            app:layout_constraintTop_toBottomOf="@+id/ayamGoreng" />
+
+        <ImageButton
+            android:id="@+id/esKrim"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/round_button"
+            app:layout_constraintStart_toEndOf="@+id/buburAyam"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:srcCompat="@drawable/es_krim"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/meal3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="6dp"
+            android:text="Es Krim"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/meal2"
+            app:layout_constraintTop_toBottomOf="@+id/ayamGoreng" />
+
+        <ImageButton
+            android:id="@+id/gadoGado"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/round_button"
+            app:layout_constraintStart_toEndOf="@+id/esKrim"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:srcCompat="@drawable/gado_gado"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/meal4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="6dp"
+            android:text="Gado-Gado"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/meal3"
+            app:layout_constraintTop_toBottomOf="@+id/ayamGoreng" />
+
+        <ImageButton
+            android:id="@+id/nasiGoreng"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/round_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/gadoGado"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:srcCompat="@drawable/nasi_goreng"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/meal7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="6dp"
+            android:text="Nasi Goreng"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/meal4"
+            app:layout_constraintTop_toBottomOf="@+id/nasiGoreng" />
+
+        <ImageButton
+            android:id="@+id/sandwich"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/round_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rendang"
+            app:layout_constraintTop_toBottomOf="@+id/nasiGoreng"
+            app:srcCompat="@drawable/sandwich"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/meal6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="6dp"
+            android:text="Kue Coklat"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/kueCoklat" />
+
+        <ImageButton
+            android:id="@+id/kueCoklat"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/round_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ayamGoreng"
+            app:srcCompat="@drawable/kue_coklat"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/meal5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="6dp"
+            android:text="Kentang Goreng"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/meal8"
+            app:layout_constraintTop_toBottomOf="@+id/kentangGoreng" />
+
+        <ImageButton
+            android:id="@+id/omellette"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/round_button"
+            app:layout_constraintStart_toEndOf="@+id/kueCoklat"
+            app:layout_constraintTop_toBottomOf="@+id/ayamGoreng"
+            app:srcCompat="@drawable/omellette"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/meal8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="6dp"
+            android:text="Omellette"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/meal6"
+            app:layout_constraintTop_toBottomOf="@+id/kueCoklat" />
+
+        <ImageButton
+            android:id="@+id/kentangGoreng"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/round_button"
+            app:layout_constraintStart_toEndOf="@+id/omellette"
+            app:layout_constraintTop_toBottomOf="@+id/ayamGoreng"
+            app:srcCompat="@drawable/kentang_goreng"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/meal9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:text="Rendang"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/meal5"
+            app:layout_constraintTop_toBottomOf="@+id/kueCoklat" />
+
+        <ImageButton
+            android:id="@+id/rendang"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/round_button"
+            app:layout_constraintStart_toEndOf="@+id/kentangGoreng"
+            app:layout_constraintTop_toBottomOf="@+id/ayamGoreng"
+            app:srcCompat="@drawable/rendang"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/meal10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="6dp"
+            android:text="Sandwich"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/meal9"
+            app:layout_constraintTop_toBottomOf="@+id/kueCoklat" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.appbar.AppBarLayout
