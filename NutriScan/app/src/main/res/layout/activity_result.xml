@@ -24,5 +24,55 @@
         android:layout_below="@+id/ivFoodImg"
         android:layout_marginTop="10sp"
         />
+    <TextView
+        android:id="@+id/tvUkuranSaji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivFoodImg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60sp"
+        android:text="Ukuran Saji"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tvKalori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivFoodImg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90sp"
+        android:text="Kalori"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tvKarbohidrat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivFoodImg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120sp"
+        android:text="Karbohidrat"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tvLemak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivFoodImg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150sp"
+        android:text="Lemak"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tvProtein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivFoodImg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180sp"
+        android:text="Protein"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
