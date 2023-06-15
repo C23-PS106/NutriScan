@@ -1,15 +1,27 @@
 package com.c23ps160.nutriscan
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.media.ThumbnailUtils
 import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.c23ps160.nutriscan.Model.FoodData
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.c23ps160.nutriscan.ml.Model
+import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+import java.io.IOException
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,8 +57,12 @@ class MainActivity : AppCompatActivity() {
             this, R.anim.to_bottom_anim
         )
     }
+    companion object {
+        var foodData = FoodData()
+    }
 
     private var clicked = false
+    private val imageSize = 224
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,6 +84,21 @@ class MainActivity : AppCompatActivity() {
         }
         openGalleryButton.setOnClickListener {
             Toast.makeText(this, "Open Gallery", Toast.LENGTH_SHORT).show()
+        }
+
+        // Scanner
+        openCameraButton.setOnClickListener {
+            if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                startActivityForResult(cameraIntent, 3)
+            } else {
+                requestPermissions(arrayOf(Manifest.permission.CAMERA), 100)
+            }
+        }
+
+        openGalleryButton.setOnClickListener {
+            val cameraIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            startActivityForResult(cameraIntent, 1)
         }
     }
 
@@ -96,6 +127,84 @@ class MainActivity : AppCompatActivity() {
             openCameraButton.startAnimation(toBottom)
             openGalleryButton.startAnimation(toBottom)
             openScanButton.startAnimation(rotateClose)
+        }
+    }
+
+    private fun classifyImage(image: Bitmap) {
+        try {
+            val model = Model.newInstance(applicationContext)
+
+            // Creates inputs for reference.
+            val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
+            val byteBuffer = ByteBuffer.allocateDirect(4 * imageSize * imageSize * 3)
+            byteBuffer.order(ByteOrder.nativeOrder())
+
+            val intValues = IntArray(imageSize * imageSize)
+            image.getPixels(intValues, 0, image.width, 0, 0, image.width, image.height)
+            var pixel = 0
+            // Iterate over each pixel and extract R, G, and B values. Add those values individually to the byte buffer.
+            for (i in 0 until imageSize) {
+                for (j in 0 until imageSize) {
+                    val value = intValues[pixel++] // RGB
+                    byteBuffer.putFloat(((value shr 16) and 0xFF) * (1f / 255))
+                    byteBuffer.putFloat(((value shr 8) and 0xFF) * (1f / 255))
+                    byteBuffer.putFloat((value and 0xFF) * (1f / 255))
+                }
+            }
+
+            inputFeature0.loadBuffer(byteBuffer)
+
+            // Runs model inference and gets the result.
+            val outputs = model.process(inputFeature0)
+            val outputFeature0 = outputs.getOutputFeature0AsTensorBuffer()
+
+            val confidences = outputFeature0.floatArray
+            // Find the index of the class with the highest confidence.
+            var maxPos = 0
+            var maxConfidence = 0f
+            for (i in confidences.indices) {
+                if (confidences[i] > maxConfidence) {
+                    maxConfidence = confidences[i]
+                    maxPos = i
+                }
+            }
+
+            val classes: Array<String> = resources.getStringArray(R.array.food_classes)
+
+
+            foodData.foodClass = classes[maxPos]
+            foodData.confidence = maxConfidence
+
+            model.close()
+
+            val intent = Intent(this@MainActivity, ResultActivity::class.java)
+            startActivity(intent)
+        } catch (e: IOException) {
+            // TODO Handle the exception
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK) {
+            foodData = FoodData()
+
+            if (requestCode == 3) {
+                val image = data?.extras?.get("data") as Bitmap
+                val dimension = Math.min(image.width, image.height)
+                val thumbnail = ThumbnailUtils.extractThumbnail(image, dimension, dimension)
+                foodData.image = thumbnail
+
+                val scaledImage = Bitmap.createScaledBitmap(thumbnail, imageSize, imageSize, false)
+                classifyImage(scaledImage)
+            } else if (requestCode == 1) {
+                val imageUri = data?.data
+                val image = MediaStore.Images.Media.getBitmap(contentResolver, imageUri)
+                foodData.image = image
+
+                val scaledImage = Bitmap.createScaledBitmap(image, imageSize, imageSize, false)
+                classifyImage(scaledImage)
+            }
         }
     }
 }

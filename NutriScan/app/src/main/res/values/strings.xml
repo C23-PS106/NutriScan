@@ -9,4 +9,17 @@
     <string name="mail_placeholder">johnDoe@mail.com</string>
     <string name="name_placeholder">John Doe</string>
     <string name="profile_information">Profile Information</string>
+
+    <string-array name="food_classes">
+        <item>Ayam goreng</item>
+        <item>Bubur ayam</item>
+        <item>Es krim</item>
+        <item>Gado-gado</item>
+        <item>Kentang goreng</item>
+        <item>Kue cokelat</item>
+        <item>Nasi goreng</item>
+        <item>Omellette</item>
+        <item>Rendang</item>
+        <item>Sandwich</item>
+    </string-array>
 </resources>
