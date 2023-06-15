@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "380101933034",
+    "firebase_url": "https://c23-ps106-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "c23-ps106",
+    "storage_bucket": "c23-ps106.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380101933034:android:8d832d5a7cb0b8ae67e493",
+        "android_client_info": {
+          "package_name": "com.c23ps160.nutriscan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "380101933034-ftin9422nv62o73ihpecj4e1mb56i6jf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmdZdxC0yC7N0vFKNvV1WDmEnzFzTgkjc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "380101933034-ftin9422nv62o73ihpecj4e1mb56i6jf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
