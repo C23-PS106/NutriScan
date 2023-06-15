@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.c23ps160.nutriscan.Login.ContinueActivity
+import com.c23ps160.nutriscan.Login.LoginActivity
 import com.c23ps160.nutriscan.Login.SessionManager
 import com.google.firebase.auth.FirebaseAuth
 
@@ -44,7 +44,7 @@ class ProfileActivity : AppCompatActivity() {
             sessionManager.setEmail("")
             sessionManager.setLogin(false)
 
-            startActivity(Intent(this, ContinueActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
     }

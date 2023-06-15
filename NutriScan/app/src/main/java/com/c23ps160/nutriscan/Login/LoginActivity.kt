@@ -13,7 +13,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
-class ContinueActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     /*private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
@@ -94,11 +94,11 @@ class ContinueActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_continue)
+        setContentView(R.layout.activity_login)
 
         val sessionManager = SessionManager(applicationContext)
         if (sessionManager.getLogin()) {
-            startActivity(Intent(this@ContinueActivity, MainActivity::class.java))
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
             finish()
         }
 
@@ -135,7 +135,7 @@ class ContinueActivity : AppCompatActivity() {
         mAuth.signInWithCredential(credential)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this@ContinueActivity, "Login succesful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Login succesful", Toast.LENGTH_SHORT).show()
                     val name = task.result.user!!.displayName
                     val email = task.result.user!!.email
 
@@ -144,7 +144,7 @@ class ContinueActivity : AppCompatActivity() {
                     sessionManager.setName(name)
                     sessionManager.setEmail(email)
 
-                    startActivity(Intent(this@ContinueActivity, MainActivity::class.java))
+                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                     finish()
                 }
             }
