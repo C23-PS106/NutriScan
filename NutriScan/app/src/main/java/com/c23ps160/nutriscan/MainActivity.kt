@@ -129,7 +129,7 @@ class MainActivity : AppCompatActivity() {
         
         addFoodDataToList()
 
-        foodAdapter = FoodAdapter(foodList)
+        foodAdapter = FoodAdapter(foodList, this)
         recyclerView.adapter = foodAdapter
     }
 
@@ -148,16 +148,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addFoodDataToList(){
-        foodList.add(QuickFood(R.drawable.ayam_goreng,"Ayam Goreng"))
-        foodList.add(QuickFood(R.drawable.bubur,"Bubur Ayam"))
-        foodList.add(QuickFood(R.drawable.es_krim,"Es Krim"))
-        foodList.add(QuickFood(R.drawable.gado_gado,"Gado-Gado"))
-        foodList.add(QuickFood(R.drawable.nasi_goreng,"Nasi Goreng"))
-        foodList.add(QuickFood(R.drawable.kue_coklat,"Kue Coklat"))
-        foodList.add(QuickFood(R.drawable.omellette,"Omellette"))
-        foodList.add(QuickFood(R.drawable.kentang_goreng,"Kentang Goreng"))
-        foodList.add(QuickFood(R.drawable.rendang,"Rendang"))
-        foodList.add(QuickFood(R.drawable.sandwich,"Sandwich"))
+        foodList.add(QuickFood(R.drawable.ayam_goreng,"Ayam Goreng", "ayam_goreng"))
+        foodList.add(QuickFood(R.drawable.bubur,"Bubur Ayam", "bubur_ayam"))
+        foodList.add(QuickFood(R.drawable.es_krim,"Es Krim", "es_krim"))
+        foodList.add(QuickFood(R.drawable.gado_gado,"Gado-Gado", "gado_gado"))
+        foodList.add(QuickFood(R.drawable.nasi_goreng,"Nasi Goreng", "nasi_goreng"))
+        foodList.add(QuickFood(R.drawable.kue_coklat,"Kue Coklat", "kue_coklat"))
+        foodList.add(QuickFood(R.drawable.omellette,"Omellette", "omellette"))
+        foodList.add(QuickFood(R.drawable.kentang_goreng,"Kentang Goreng", "kentang_goreng"))
+        foodList.add(QuickFood(R.drawable.rendang,"Rendang", "rendang"))
+        foodList.add(QuickFood(R.drawable.sandwich,"Sandwich", "sandwich"))
+
     }
 
     private fun addArticleDataToList(){
