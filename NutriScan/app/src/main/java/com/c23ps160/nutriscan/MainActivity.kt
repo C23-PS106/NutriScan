@@ -126,7 +126,7 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = GridLayoutManager(this, 2, RecyclerView.HORIZONTAL, false)
         recyclerView.layoutManager = layoutManager
         foodList = ArrayList()
-
+        
         addFoodDataToList()
 
         foodAdapter = FoodAdapter(foodList)
@@ -249,6 +249,7 @@ class MainActivity : AppCompatActivity() {
             model.close()
 
             val intent = Intent(this@MainActivity, ResultActivity::class.java)
+            intent.putExtra("Type", "Scan")
             startActivity(intent)
         } catch (e: IOException) {
             // TODO Handle the exception
