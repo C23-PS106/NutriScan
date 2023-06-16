@@ -374,7 +374,7 @@
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/lato_bold"
-            android:text="Quick Access"
+            android:text="Article"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -411,8 +411,8 @@
 
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
                 android:layout_gravity="start"
                 android:src="@drawable/logo_app" />
 

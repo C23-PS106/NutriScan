@@ -32,6 +32,7 @@ class ProfileActivity : AppCompatActivity() {
 
         val backIcon: ImageView = findViewById(R.id.backicon)
         backIcon.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
 //        val button2: Button = findViewById(R.id.button2)
