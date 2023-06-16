@@ -11,6 +11,19 @@
     <string name="profile_information">Profile Information</string>
 
     <string-array name="food_classes">
+        <item>ayam_goreng</item>
+        <item>bubur_ayam</item>
+        <item>es_krim</item>
+        <item>gado_gado</item>
+        <item>kentang_goreng</item>
+        <item>kue_coklat</item>
+        <item>nasi_goreng</item>
+        <item>omellette</item>
+        <item>rendang</item>
+        <item>sandwich</item>
+    </string-array>
+
+    <string-array name="food_names">
         <item>Ayam goreng</item>
         <item>Bubur ayam</item>
         <item>Es krim</item>

@@ -5,6 +5,7 @@ import java.io.Serializable
 
 class FoodData : Serializable {
     var image: Bitmap? = null
+    var foodClass: String? = null
     var foodName: String? = null
     var confidence: Float = 0f
 }

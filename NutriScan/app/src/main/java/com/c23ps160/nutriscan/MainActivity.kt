@@ -170,12 +170,15 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            val classes: Array<String> = resources.getStringArray(R.array.food_classes)
+            val foodClasses: Array<String> = resources.getStringArray(R.array.food_classes)
+            val foodNames: Array<String> = resources.getStringArray(R.array.food_names)
 
 
             if (maxConfidence >= 0.85f) {
-                foodData.foodName = classes[maxPos]
+                foodData.foodClass = foodClasses[maxPos]
+                foodData.foodName = foodNames[maxPos]
             } else {
+                foodData.foodClass = null
                 foodData.foodName = "Mohon maaf data makanan tersebut belum terdaftar"
             }
             foodData.confidence = maxConfidence
