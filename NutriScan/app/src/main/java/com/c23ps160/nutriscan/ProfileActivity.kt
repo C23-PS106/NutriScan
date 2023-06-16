@@ -26,7 +26,7 @@ class ProfileActivity : AppCompatActivity() {
         val displayName = sessionManager.getName()
         val email = sessionManager.getEmail()
 
-        findViewById<TextView>(R.id.tv_disp_name).text = displayName
+        findViewById<TextView>(R.id.tvUkuranSaji).text = displayName
         findViewById<TextView>(R.id.tv_disp_mail).text = email
 
 

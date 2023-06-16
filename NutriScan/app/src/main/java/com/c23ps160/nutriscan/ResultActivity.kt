@@ -1,5 +1,6 @@
 package com.c23ps160.nutriscan
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.widget.ImageView
@@ -35,16 +36,26 @@ class ResultActivity : AppCompatActivity() {
         imageView.setImageBitmap(foodImg)
         tvFoodName.text = foodName
 
-        if(foodClass != null) {
+        val backIcon: ImageView = findViewById(R.id.backicon)
+        backIcon.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
+        if (foodClass != null) {
 //            FirebaseApp.initializeApp(this)
 
-            val db: DatabaseReference = FirebaseDatabase.getInstance("https://c23-ps106.firebaseio.com/").getReference("Foods")
+            val db: DatabaseReference =
+                FirebaseDatabase.getInstance("https://c23-ps106.firebaseio.com/")
+                    .getReference("Foods")
 //            val db: DatabaseReference = Firebase.database.getReference("Foods")
             db.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    val ukuranSaji = snapshot.child(foodClass).child("UkuranSaji").getValue<String>()
+                    val ukuranSaji =
+                        snapshot.child(foodClass).child("UkuranSaji").getValue<String>()
                     val kalori = snapshot.child(foodClass).child("Kalori").getValue<String>()
-                    val karbohidrat = snapshot.child(foodClass).child("Karbohidrat").getValue<String>()
+                    val karbohidrat =
+                        snapshot.child(foodClass).child("Karbohidrat").getValue<String>()
                     val lemak = snapshot.child(foodClass).child("Lemak").getValue<String>()
                     val protein = snapshot.child(foodClass).child("Protein").getValue<String>()
 
@@ -54,6 +65,7 @@ class ResultActivity : AppCompatActivity() {
                     tvLemak.text = lemak
                     tvProtein.text = protein
                 }
+
                 override fun onCancelled(error: DatabaseError) {
                 }
             })
