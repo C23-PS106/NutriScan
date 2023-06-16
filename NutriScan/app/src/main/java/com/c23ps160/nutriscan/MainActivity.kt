@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.icu.lang.UCharacter.VerticalOrientation
 import android.media.ThumbnailUtils
 import android.os.Build
 import android.os.Bundle
@@ -17,7 +18,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.c23ps160.nutriscan.Adapter.ArticleAdapter
 import com.c23ps160.nutriscan.Adapter.FoodAdapter
+import com.c23ps160.nutriscan.Model.Article
 import com.c23ps160.nutriscan.Model.FoodData
 import com.c23ps160.nutriscan.Model.QuickFood
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -71,6 +74,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var foodList:ArrayList<QuickFood>
     private lateinit var foodAdapter: FoodAdapter
+    private lateinit var articleRecyclerView: RecyclerView
+    private lateinit var articleList:ArrayList<Article>
+    private lateinit var articleAdapter: ArticleAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -110,6 +116,7 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(cameraIntent, 1)
         }
         init()
+        initiate()
     }
 
     private fun init(){
@@ -119,24 +126,44 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = GridLayoutManager(this, 2, RecyclerView.HORIZONTAL, false)
         recyclerView.layoutManager = layoutManager
         foodList = ArrayList()
+        
+        addFoodDataToList()
 
-        addDataToList()
-
-        foodAdapter = FoodAdapter(foodList, this)
+        foodAdapter = FoodAdapter(foodList)
         recyclerView.adapter = foodAdapter
     }
 
-    private fun addDataToList(){
-        foodList.add(QuickFood(R.drawable.ayam_goreng,"Ayam Goreng", "ayam_goreng"))
-        foodList.add(QuickFood(R.drawable.bubur,"Bubur Ayam", "bubur_ayam"))
-        foodList.add(QuickFood(R.drawable.es_krim,"Es Krim", "es_krim"))
-        foodList.add(QuickFood(R.drawable.gado_gado,"Gado-Gado", "gado_gado"))
-        foodList.add(QuickFood(R.drawable.nasi_goreng,"Nasi Goreng", "nasi_goreng"))
-        foodList.add(QuickFood(R.drawable.kue_coklat,"Kue Coklat", "kue_coklat"))
-        foodList.add(QuickFood(R.drawable.omellette,"Omellette", "omellette"))
-        foodList.add(QuickFood(R.drawable.kentang_goreng,"Kentang Goreng", "kentang_goreng"))
-        foodList.add(QuickFood(R.drawable.rendang,"Rendang", "rendang"))
-        foodList.add(QuickFood(R.drawable.sandwich,"Sandwich", "sandwich"))
+    private fun initiate(){
+        articleRecyclerView = findViewById(R.id.articleRecyclerView)
+        articleRecyclerView.setHasFixedSize(true)
+        articleRecyclerView.setItemViewCacheSize(20)
+        val layoutManager = LinearLayoutManager(this)
+        articleRecyclerView.layoutManager = layoutManager
+        articleList = ArrayList()
+
+        addArticleDataToList()
+
+        articleAdapter = ArticleAdapter(articleList)
+        articleRecyclerView.adapter = articleAdapter
+    }
+
+    private fun addFoodDataToList(){
+        foodList.add(QuickFood(R.drawable.ayam_goreng,"Ayam Goreng"))
+        foodList.add(QuickFood(R.drawable.bubur,"Bubur Ayam"))
+        foodList.add(QuickFood(R.drawable.es_krim,"Es Krim"))
+        foodList.add(QuickFood(R.drawable.gado_gado,"Gado-Gado"))
+        foodList.add(QuickFood(R.drawable.nasi_goreng,"Nasi Goreng"))
+        foodList.add(QuickFood(R.drawable.kue_coklat,"Kue Coklat"))
+        foodList.add(QuickFood(R.drawable.omellette,"Omellette"))
+        foodList.add(QuickFood(R.drawable.kentang_goreng,"Kentang Goreng"))
+        foodList.add(QuickFood(R.drawable.rendang,"Rendang"))
+        foodList.add(QuickFood(R.drawable.sandwich,"Sandwich"))
+    }
+
+    private fun addArticleDataToList(){
+        articleList.add(Article(R.drawable.bannerarticle_satu, "5 Jenis Nutrisi yang Harus Dipenuhi untuk Tubuh Sehat"))
+        articleList.add(Article(R.drawable.bannerarticle_dua, "Pentingnya Gizi Seimbang bagi Kesehatan"))
+        articleList.add(Article(R.drawable.bannerarticle_tiga, "Ini Alasan Pentingnya Memenuhi Kebutuhan Asupan Nutrisi di Pagi Hari"))
     }
 
     private fun onOpenScanButtonClicked() {
