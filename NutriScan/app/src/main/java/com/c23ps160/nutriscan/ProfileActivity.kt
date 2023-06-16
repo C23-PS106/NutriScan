@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.c23ps160.nutriscan.Login.LoginActivity
 import com.c23ps160.nutriscan.Login.SessionManager
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 
 class ProfileActivity : AppCompatActivity() {
@@ -37,14 +39,32 @@ class ProfileActivity : AppCompatActivity() {
 //            Toast.makeText(this, "Log out", Toast.LENGTH_SHORT).show()
 //        }
 
-        findViewById<Button>(R.id.button2).setOnClickListener {
-            auth.signOut()
+        findViewById<Button>(R.id.btnLogout).setOnClickListener {
+//            auth.signOut()
+//            val sessionManager = SessionManager(applicationContext)
+//            sessionManager.setName("")
+//            sessionManager.setEmail("")
+//            sessionManager.setLogin(false)
+//
+//            startActivity(Intent(this, LoginActivity::class.java))
+//            finish()
+            signOut()
+        }
+    }
+
+    private fun signOut() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+        val gsc = GoogleSignIn.getClient(this, gso)
+        FirebaseAuth.getInstance().signOut()
+        gsc.signOut().addOnCompleteListener {
             val sessionManager = SessionManager(applicationContext)
             sessionManager.setName("")
             sessionManager.setEmail("")
             sessionManager.setLogin(false)
 
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this@ProfileActivity, LoginActivity::class.java))
             finish()
         }
     }

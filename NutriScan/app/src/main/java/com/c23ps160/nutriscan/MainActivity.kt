@@ -75,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         profileIcon.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
+            finish()
         }
         openScanButton.setOnClickListener {
             onOpenScanButtonClicked()
