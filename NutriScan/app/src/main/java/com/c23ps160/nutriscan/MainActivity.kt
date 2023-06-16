@@ -109,34 +109,34 @@ class MainActivity : AppCompatActivity() {
             val cameraIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(cameraIntent, 1)
         }
-//        init()
+        init()
     }
 
-//    private fun init(){
-//        recyclerView = findViewById(R.id.recyclerView)
-//        recyclerView.setHasFixedSize(true)
-//        recyclerView.setItemViewCacheSize(20)
-//        val layoutManager = GridLayoutManager(this, 2, RecyclerView.HORIZONTAL, false)
-//        recyclerView.layoutManager = layoutManager
-//        foodList = ArrayList()
-//
-//        addDataToList()
-//
-//        foodAdapter = FoodAdapter(foodList)
-//        recyclerView.adapter = foodAdapter
-//    }
+    private fun init(){
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.setHasFixedSize(true)
+        recyclerView.setItemViewCacheSize(20)
+        val layoutManager = GridLayoutManager(this, 2, RecyclerView.HORIZONTAL, false)
+        recyclerView.layoutManager = layoutManager
+        foodList = ArrayList()
+
+        addDataToList()
+
+        foodAdapter = FoodAdapter(foodList, this)
+        recyclerView.adapter = foodAdapter
+    }
 
     private fun addDataToList(){
-        foodList.add(QuickFood(R.drawable.ayam_goreng,"Ayam Goreng"))
-        foodList.add(QuickFood(R.drawable.bubur,"Bubur Ayam"))
-        foodList.add(QuickFood(R.drawable.es_krim,"Es Krim"))
-        foodList.add(QuickFood(R.drawable.gado_gado,"Gado-Gado"))
-        foodList.add(QuickFood(R.drawable.nasi_goreng,"Nasi Goreng"))
-        foodList.add(QuickFood(R.drawable.kue_coklat,"Kue Coklat"))
-        foodList.add(QuickFood(R.drawable.omellette,"Omellette"))
-        foodList.add(QuickFood(R.drawable.kentang_goreng,"Kentang Goreng"))
-        foodList.add(QuickFood(R.drawable.rendang,"Rendang"))
-        foodList.add(QuickFood(R.drawable.sandwich,"Sandwich"))
+        foodList.add(QuickFood(R.drawable.ayam_goreng,"Ayam Goreng", "ayam_goreng"))
+        foodList.add(QuickFood(R.drawable.bubur,"Bubur Ayam", "bubur_ayam"))
+        foodList.add(QuickFood(R.drawable.es_krim,"Es Krim", "es_krim"))
+        foodList.add(QuickFood(R.drawable.gado_gado,"Gado-Gado", "gado_gado"))
+        foodList.add(QuickFood(R.drawable.nasi_goreng,"Nasi Goreng", "nasi_goreng"))
+        foodList.add(QuickFood(R.drawable.kue_coklat,"Kue Coklat", "kue_coklat"))
+        foodList.add(QuickFood(R.drawable.omellette,"Omellette", "omellette"))
+        foodList.add(QuickFood(R.drawable.kentang_goreng,"Kentang Goreng", "kentang_goreng"))
+        foodList.add(QuickFood(R.drawable.rendang,"Rendang", "rendang"))
+        foodList.add(QuickFood(R.drawable.sandwich,"Sandwich", "sandwich"))
     }
 
     private fun onOpenScanButtonClicked() {
@@ -222,6 +222,7 @@ class MainActivity : AppCompatActivity() {
             model.close()
 
             val intent = Intent(this@MainActivity, ResultActivity::class.java)
+            intent.putExtra("Type", "Scan")
             startActivity(intent)
         } catch (e: IOException) {
             // TODO Handle the exception
