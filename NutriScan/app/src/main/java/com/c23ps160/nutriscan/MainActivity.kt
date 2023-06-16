@@ -14,7 +14,12 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.c23ps160.nutriscan.Adapter.FoodAdapter
 import com.c23ps160.nutriscan.Model.FoodData
+import com.c23ps160.nutriscan.Model.QuickFood
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.c23ps160.nutriscan.ml.Model
 import org.tensorflow.lite.DataType
@@ -63,6 +68,9 @@ class MainActivity : AppCompatActivity() {
 
     private var clicked = false
     private val imageSize = 224
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var foodList:ArrayList<QuickFood>
+    private lateinit var foodAdapter: FoodAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -101,6 +109,33 @@ class MainActivity : AppCompatActivity() {
             val cameraIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(cameraIntent, 1)
         }
+        init()
+    }
+
+    private fun init(){
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.setHasFixedSize(true)
+        val layoutManager = GridLayoutManager(this, 2, RecyclerView.HORIZONTAL, false)
+        recyclerView.layoutManager = layoutManager
+        foodList = ArrayList()
+
+        addDataToList()
+
+        foodAdapter = FoodAdapter(foodList)
+        recyclerView.adapter = foodAdapter
+    }
+
+    private fun addDataToList(){
+        foodList.add(QuickFood(R.drawable.ayam_goreng,"Ayam Goreng"))
+        foodList.add(QuickFood(R.drawable.bubur,"Bubur Ayam"))
+        foodList.add(QuickFood(R.drawable.es_krim,"Es Krim"))
+        foodList.add(QuickFood(R.drawable.gado_gado,"Gado-Gado"))
+        foodList.add(QuickFood(R.drawable.nasi_goreng,"Nasi Goreng"))
+        foodList.add(QuickFood(R.drawable.kue_coklat,"Kue Coklat"))
+        foodList.add(QuickFood(R.drawable.omellette,"Omelleette"))
+        foodList.add(QuickFood(R.drawable.kentang_goreng,"Kentang Goreng"))
+        foodList.add(QuickFood(R.drawable.rendang,"Rendang"))
+        foodList.add(QuickFood(R.drawable.sandwich,"Sandwich"))
     }
 
     private fun onOpenScanButtonClicked() {
