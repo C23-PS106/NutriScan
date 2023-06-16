@@ -109,21 +109,22 @@ class MainActivity : AppCompatActivity() {
             val cameraIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(cameraIntent, 1)
         }
-        init()
+//        init()
     }
 
-    private fun init(){
-        recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.setHasFixedSize(true)
-        val layoutManager = GridLayoutManager(this, 2, RecyclerView.HORIZONTAL, false)
-        recyclerView.layoutManager = layoutManager
-        foodList = ArrayList()
-
-        addDataToList()
-
-        foodAdapter = FoodAdapter(foodList)
-        recyclerView.adapter = foodAdapter
-    }
+//    private fun init(){
+//        recyclerView = findViewById(R.id.recyclerView)
+//        recyclerView.setHasFixedSize(true)
+//        recyclerView.setItemViewCacheSize(20)
+//        val layoutManager = GridLayoutManager(this, 2, RecyclerView.HORIZONTAL, false)
+//        recyclerView.layoutManager = layoutManager
+//        foodList = ArrayList()
+//
+//        addDataToList()
+//
+//        foodAdapter = FoodAdapter(foodList)
+//        recyclerView.adapter = foodAdapter
+//    }
 
     private fun addDataToList(){
         foodList.add(QuickFood(R.drawable.ayam_goreng,"Ayam Goreng"))
@@ -132,7 +133,7 @@ class MainActivity : AppCompatActivity() {
         foodList.add(QuickFood(R.drawable.gado_gado,"Gado-Gado"))
         foodList.add(QuickFood(R.drawable.nasi_goreng,"Nasi Goreng"))
         foodList.add(QuickFood(R.drawable.kue_coklat,"Kue Coklat"))
-        foodList.add(QuickFood(R.drawable.omellette,"Omelleette"))
+        foodList.add(QuickFood(R.drawable.omellette,"Omellette"))
         foodList.add(QuickFood(R.drawable.kentang_goreng,"Kentang Goreng"))
         foodList.add(QuickFood(R.drawable.rendang,"Rendang"))
         foodList.add(QuickFood(R.drawable.sandwich,"Sandwich"))
