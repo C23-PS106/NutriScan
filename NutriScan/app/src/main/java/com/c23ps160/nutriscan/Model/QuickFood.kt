@@ -1,3 +1,5 @@
 package com.c23ps160.nutriscan.Model
 
-data class QuickFood(val foodImage:Int , val foodNames:String)
+import java.io.Serializable
+
+data class QuickFood(val foodImage:Int , val foodNames:String, val foodClass:String)  : Serializable

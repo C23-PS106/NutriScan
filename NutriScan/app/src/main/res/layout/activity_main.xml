@@ -33,321 +33,320 @@
             android:fontFamily="@font/lato_bold"
             android:text="Quick Access" />
 
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/recyclerView"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="4dp"-->
-<!--            android:layout_below="@id/textView6" />-->
-        <HorizontalScrollView
-            android:id="@+id/scrollmenu"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView6">
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/textView6" />
+<!--        <HorizontalScrollView-->
+<!--            android:id="@+id/scrollmenu"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/textView6">-->
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RelativeLayout
-                    android:id="@+id/btnAyam"
-                    android:layout_width="90dp"
-                    android:layout_height="56dp"
-                    android:layout_marginVertical="3dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:background="@color/white">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/btnAyam"-->
+<!--                    android:layout_width="90dp"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:layout_marginVertical="3dp"-->
+<!--                    android:layout_marginLeft="12dp"-->
+<!--                    android:layout_marginRight="12dp"-->
+<!--                    android:background="@color/white">-->
 
-                    <ImageView
-                        android:id="@+id/ayamGoreng"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/round_button"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/ayam_goreng"
-                        android:scaleType="fitCenter"
-                        android:adjustViewBounds="true"/>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/ayamGoreng"-->
+<!--                        android:layout_width="36dp"-->
+<!--                        android:layout_height="36dp"-->
+<!--                        android:background="@drawable/round_button"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:src="@drawable/ayam_goreng"-->
+<!--                        android:scaleType="fitCenter"-->
+<!--                        android:adjustViewBounds="true"/>-->
 
-                    <TextView
-                        android:id="@+id/textAyam"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ayam Goreng"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/ayamGoreng" />
-                </RelativeLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/textAyam"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Ayam Goreng"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_below="@+id/ayamGoreng" />-->
+<!--                </RelativeLayout>-->
 
-                <RelativeLayout
-                    android:id="@+id/btnBubur"
-                    android:layout_width="90dp"
-                    android:layout_height="56dp"
-                    android:layout_marginVertical="3dp"
-                    android:layout_marginLeft="114dp"
-                    android:layout_marginRight="12dp"
-                    android:background="@color/white">
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/btnBubur"-->
+<!--                    android:layout_width="90dp"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:layout_marginVertical="3dp"-->
+<!--                    android:layout_marginLeft="114dp"-->
+<!--                    android:layout_marginRight="12dp"-->
+<!--                    android:background="@color/white">-->
 
-                    <ImageView
-                        android:id="@+id/buburAyam"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/round_button"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/bubur"
-                        android:scaleType="fitCenter"
-                        android:adjustViewBounds="true"/>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/buburAyam"-->
+<!--                        android:layout_width="36dp"-->
+<!--                        android:layout_height="36dp"-->
+<!--                        android:background="@drawable/round_button"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:src="@drawable/bubur"-->
+<!--                        android:scaleType="fitCenter"-->
+<!--                        android:adjustViewBounds="true"/>-->
 
-                    <TextView
-                        android:id="@+id/textBubur"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Bubur Ayam"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/buburAyam" />
-                </RelativeLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/textBubur"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Bubur Ayam"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_below="@+id/buburAyam" />-->
+<!--                </RelativeLayout>-->
 
-                <RelativeLayout
-                    android:id="@+id/btnEskrim"
-                    android:layout_width="90dp"
-                    android:layout_height="56dp"
-                    android:layout_marginVertical="3dp"
-                    android:layout_marginLeft="216dp"
-                    android:layout_marginRight="12dp"
-                    android:background="@color/white">
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/btnEskrim"-->
+<!--                    android:layout_width="90dp"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:layout_marginVertical="3dp"-->
+<!--                    android:layout_marginLeft="216dp"-->
+<!--                    android:layout_marginRight="12dp"-->
+<!--                    android:background="@color/white">-->
 
-                    <ImageView
-                        android:id="@+id/esKrim"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/round_button"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/es_krim"
-                        android:scaleType="fitCenter"
-                        android:adjustViewBounds="true"/>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/esKrim"-->
+<!--                        android:layout_width="36dp"-->
+<!--                        android:layout_height="36dp"-->
+<!--                        android:background="@drawable/round_button"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:src="@drawable/es_krim"-->
+<!--                        android:scaleType="fitCenter"-->
+<!--                        android:adjustViewBounds="true"/>-->
 
-                    <TextView
-                        android:id="@+id/textEskrim"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Es Krim"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/esKrim" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/btnGado"
-                    android:layout_width="90dp"
-                    android:layout_height="56dp"
-                    android:layout_marginVertical="3dp"
-                    android:layout_marginLeft="318dp"
-                    android:layout_marginRight="12dp"
-                    android:background="@color/white">
+<!--                    <TextView-->
+<!--                        android:id="@+id/textEskrim"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Es Krim"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_below="@+id/esKrim" />-->
+<!--                </RelativeLayout>-->
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/btnGado"-->
+<!--                    android:layout_width="90dp"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:layout_marginVertical="3dp"-->
+<!--                    android:layout_marginLeft="318dp"-->
+<!--                    android:layout_marginRight="12dp"-->
+<!--                    android:background="@color/white">-->
 
-                    <ImageView
-                        android:id="@+id/gado"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/round_button"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/gado_gado"
-                        android:scaleType="fitCenter"
-                        android:adjustViewBounds="true"/>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/gado"-->
+<!--                        android:layout_width="36dp"-->
+<!--                        android:layout_height="36dp"-->
+<!--                        android:background="@drawable/round_button"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:src="@drawable/gado_gado"-->
+<!--                        android:scaleType="fitCenter"-->
+<!--                        android:adjustViewBounds="true"/>-->
 
-                    <TextView
-                        android:id="@+id/textGado"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Gado-Gado"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/gado" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/btnKue"
-                    android:layout_width="90dp"
-                    android:layout_height="56dp"
-                    android:layout_marginVertical="3dp"
-                    android:layout_marginLeft="420dp"
-                    android:layout_marginRight="12dp"
-                    android:background="@color/white">
+<!--                    <TextView-->
+<!--                        android:id="@+id/textGado"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Gado-Gado"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_below="@+id/gado" />-->
+<!--                </RelativeLayout>-->
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/btnKue"-->
+<!--                    android:layout_width="90dp"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:layout_marginVertical="3dp"-->
+<!--                    android:layout_marginLeft="420dp"-->
+<!--                    android:layout_marginRight="12dp"-->
+<!--                    android:background="@color/white">-->
 
-                    <ImageView
-                        android:id="@+id/kue"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/round_button"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/kue_coklat"
-                        android:scaleType="fitCenter"
-                        android:adjustViewBounds="true"/>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/kue"-->
+<!--                        android:layout_width="36dp"-->
+<!--                        android:layout_height="36dp"-->
+<!--                        android:background="@drawable/round_button"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:src="@drawable/kue_coklat"-->
+<!--                        android:scaleType="fitCenter"-->
+<!--                        android:adjustViewBounds="true"/>-->
 
-                    <TextView
-                        android:id="@+id/textKue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Kue Coklat"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/kue" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/btnKentang"
-                    android:layout_width="90dp"
-                    android:layout_height="56dp"
-                    android:layout_marginVertical="3dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_below="@id/btnAyam"
-                    android:background="@color/white">
+<!--                    <TextView-->
+<!--                        android:id="@+id/textKue"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Kue Coklat"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_below="@+id/kue" />-->
+<!--                </RelativeLayout>-->
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/btnKentang"-->
+<!--                    android:layout_width="90dp"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:layout_marginVertical="3dp"-->
+<!--                    android:layout_marginLeft="12dp"-->
+<!--                    android:layout_marginRight="12dp"-->
+<!--                    android:layout_below="@id/btnAyam"-->
+<!--                    android:background="@color/white">-->
 
-                    <ImageView
-                        android:id="@+id/kentang"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/round_button"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/kentang_goreng"
-                        android:scaleType="fitCenter"
-                        android:adjustViewBounds="true"/>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/kentang"-->
+<!--                        android:layout_width="36dp"-->
+<!--                        android:layout_height="36dp"-->
+<!--                        android:background="@drawable/round_button"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:src="@drawable/kentang_goreng"-->
+<!--                        android:scaleType="fitCenter"-->
+<!--                        android:adjustViewBounds="true"/>-->
 
-                    <TextView
-                        android:id="@+id/textKentang"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Kentang Goreng"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/kentang" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/btnNasi"
-                    android:layout_width="90dp"
-                    android:layout_height="56dp"
-                    android:layout_marginVertical="3dp"
-                    android:layout_marginLeft="114dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_below="@id/btnAyam"
-                    android:background="@color/white">
+<!--                    <TextView-->
+<!--                        android:id="@+id/textKentang"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Kentang Goreng"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_below="@+id/kentang" />-->
+<!--                </RelativeLayout>-->
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/btnNasi"-->
+<!--                    android:layout_width="90dp"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:layout_marginVertical="3dp"-->
+<!--                    android:layout_marginLeft="114dp"-->
+<!--                    android:layout_marginRight="12dp"-->
+<!--                    android:layout_below="@id/btnAyam"-->
+<!--                    android:background="@color/white">-->
 
-                    <ImageView
-                        android:id="@+id/nasi"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/round_button"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/nasi_goreng"
-                        android:scaleType="fitCenter"
-                        android:adjustViewBounds="true"/>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/nasi"-->
+<!--                        android:layout_width="36dp"-->
+<!--                        android:layout_height="36dp"-->
+<!--                        android:background="@drawable/round_button"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:src="@drawable/nasi_goreng"-->
+<!--                        android:scaleType="fitCenter"-->
+<!--                        android:adjustViewBounds="true"/>-->
 
-                    <TextView
-                        android:id="@+id/textNasi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nasi Goreng"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/nasi" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/btnOmellette"
-                    android:layout_width="90dp"
-                    android:layout_height="56dp"
-                    android:layout_marginVertical="3dp"
-                    android:layout_marginLeft="216dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_below="@id/btnAyam"
-                    android:background="@color/white">
+<!--                    <TextView-->
+<!--                        android:id="@+id/textNasi"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Nasi Goreng"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_below="@+id/nasi" />-->
+<!--                </RelativeLayout>-->
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/btnOmellette"-->
+<!--                    android:layout_width="90dp"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:layout_marginVertical="3dp"-->
+<!--                    android:layout_marginLeft="216dp"-->
+<!--                    android:layout_marginRight="12dp"-->
+<!--                    android:layout_below="@id/btnAyam"-->
+<!--                    android:background="@color/white">-->
 
-                    <ImageView
-                        android:id="@+id/omellette"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/round_button"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/omellette"
-                        android:scaleType="fitCenter"
-                        android:adjustViewBounds="true"/>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/omellette"-->
+<!--                        android:layout_width="36dp"-->
+<!--                        android:layout_height="36dp"-->
+<!--                        android:background="@drawable/round_button"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:src="@drawable/omellette"-->
+<!--                        android:scaleType="fitCenter"-->
+<!--                        android:adjustViewBounds="true"/>-->
 
-                    <TextView
-                        android:id="@+id/textOmellette"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Omellette"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/omellette" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/btnRendang"
-                    android:layout_width="90dp"
-                    android:layout_height="56dp"
-                    android:layout_marginVertical="3dp"
-                    android:layout_marginLeft="316dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_below="@id/btnAyam"
-                    android:background="@color/white">
+<!--                    <TextView-->
+<!--                        android:id="@+id/textOmellette"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Omellette"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_below="@+id/omellette" />-->
+<!--                </RelativeLayout>-->
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/btnRendang"-->
+<!--                    android:layout_width="90dp"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:layout_marginVertical="3dp"-->
+<!--                    android:layout_marginLeft="316dp"-->
+<!--                    android:layout_marginRight="12dp"-->
+<!--                    android:layout_below="@id/btnAyam"-->
+<!--                    android:background="@color/white">-->
 
-                    <ImageView
-                        android:id="@+id/rendang"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/round_button"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/rendang"
-                        android:scaleType="fitCenter"
-                        android:adjustViewBounds="true"/>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/rendang"-->
+<!--                        android:layout_width="36dp"-->
+<!--                        android:layout_height="36dp"-->
+<!--                        android:background="@drawable/round_button"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:src="@drawable/rendang"-->
+<!--                        android:scaleType="fitCenter"-->
+<!--                        android:adjustViewBounds="true"/>-->
 
-                    <TextView
-                        android:id="@+id/textRendang"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rendang"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/rendang" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/btnSandwich"
-                    android:layout_width="90dp"
-                    android:layout_height="56dp"
-                    android:layout_marginVertical="3dp"
-                    android:layout_marginLeft="418dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_below="@id/btnAyam"
-                    android:background="@color/white">
+<!--                    <TextView-->
+<!--                        android:id="@+id/textRendang"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Rendang"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_below="@+id/rendang" />-->
+<!--                </RelativeLayout>-->
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/btnSandwich"-->
+<!--                    android:layout_width="90dp"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:layout_marginVertical="3dp"-->
+<!--                    android:layout_marginLeft="418dp"-->
+<!--                    android:layout_marginRight="12dp"-->
+<!--                    android:layout_below="@id/btnAyam"-->
+<!--                    android:background="@color/white">-->
 
-                    <ImageView
-                        android:id="@+id/sandwich"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/round_button"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/sandwich"
-                        android:scaleType="fitCenter"
-                        android:adjustViewBounds="true"/>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/sandwich"-->
+<!--                        android:layout_width="36dp"-->
+<!--                        android:layout_height="36dp"-->
+<!--                        android:background="@drawable/round_button"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:src="@drawable/sandwich"-->
+<!--                        android:scaleType="fitCenter"-->
+<!--                        android:adjustViewBounds="true"/>-->
 
-                    <TextView
-                        android:id="@+id/textSandwich"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sandwich"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/sandwich" />
-                </RelativeLayout>
-            </RelativeLayout>
-
-        </HorizontalScrollView>
+<!--                    <TextView-->
+<!--                        android:id="@+id/textSandwich"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Sandwich"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_below="@+id/sandwich" />-->
+<!--                </RelativeLayout>-->
+<!--            </RelativeLayout>-->
+<!--        </HorizontalScrollView>-->
 
     </RelativeLayout>
 
